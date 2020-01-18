@@ -62,7 +62,7 @@ if __name__=='__main__':
         m.append(num_steps)
         x = np.linspace(LOWER_BOUND, UPPER_BOUND, num_steps, endpoint=True)
         '''Change 'int_func' below to 'None' if the integral is not specified.'''
-        y.append(lnOmega_N(x, func, int_))
+        y.append(lnOmega_N(x, func, int_func))
 
     plt.plot(m, ary(y)/ln(m))
     plt.ylabel('entropy ='+r'$\frac{ln(\Omega)}{N} \frac{1}{ln(m)}$')
