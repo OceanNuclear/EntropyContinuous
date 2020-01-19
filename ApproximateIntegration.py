@@ -23,7 +23,7 @@ def lnOmega_N(steps, func, int_func=None):
     global PLOT_ONCE
     if PLOT_ONCE:
         PLOT_ONCE = False
-        assert np.isclose(int_func(0,1), 1), "'func' needs to be normalized"
+        assert np.isclose(int_func(LOWER_BOUND, UPPER_BOUND), 1), "'func' needs to be normalized"
         plt.step(steps, func(steps), where='post', label=r'$P(x)$')
         plt.step(steps, lengthen(summation), where='post', label=r'$P(x)ln(P(x))$')
         plt.axhline(color='black', label='x-axis')
