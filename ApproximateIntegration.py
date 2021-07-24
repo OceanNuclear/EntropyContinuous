@@ -1,6 +1,7 @@
 from numpy import e, exp, cos, arccos, sin, arctan, tan, pi, sqrt; from numpy import array as ary; import numpy as np; tau = 2*pi
 from matplotlib import pyplot as plt
 from scipy.integrate import quad, quadrature
+from scipy.special import factorial as fac
 from math import fsum
 from numpy import log as ln
 
@@ -40,16 +41,17 @@ def lengthen(lst):
 
 if __name__=='__main__':
     m, y = [], []
-
+    lamb = 1.2
     ######## LOOK HERE ########
     def func(x): #make sure it's 
         '''
         Change the function below, 
         and make sure that it is normalized.
         '''
-        return exp(-x)/(1-1/e)
-        return 3*x**2 # x^2 function
-        return 1 # flat distribution
+        # return exp(-x)/(1-1/e)
+        # return 3*x**2 # x^2 function
+        # return 1 # flat distribution
+        return exp(-lamb) * lamb**x/fac(x)
 
     def int_func(a, b):
         '''Write its corresponding integral here'''
